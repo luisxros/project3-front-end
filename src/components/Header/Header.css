@@ -1,0 +1,28 @@
+.Header {
+    background-color: dodgerblue;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.Header a {
+    text-decoration: none;
+    color: white;
+}
+
+.NavLinks {
+    list-style: none;
+    display: flex;
+    margin-top: 15px;
+}
+
+.NavLinks li {
+    margin-right: 20px;
+}
+
+.NavBar-welcome {
+    margin-right: 20px;
+}
