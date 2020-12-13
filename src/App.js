@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import MoviePage from './pages/MoviePage';
+import TvPage from './pages/TvPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -13,7 +14,7 @@ import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 import { getUser,logout } from './services/userService';
-import { getMovieDay } from './services/movie-api';
+import { getMovieDay, getTvDay } from './services/movie-api';
 
 
 
@@ -24,6 +25,13 @@ function App(props) {
   const [ userState, setUserState ] = useState({ user: getUser() });
 
   const [ movieData, setMovieData ] = useState({
+    page: 0,
+    results: [],
+    total_pages: 0,
+    total_results: 0,
+  })
+
+  const [ tvData, setTvData ] = useState({
     page: 0,
     results: [],
     total_pages: 0,
@@ -48,16 +56,24 @@ function App(props) {
 
 
   async function getMovieData() {
-    const data = await getMovieDay();
-    setMovieData(data);
+    const movie = await getMovieDay();
+    setMovieData(movie);
   }
-
 
 
   useEffect(() => {
     getMovieData();
   }, []);
 
+
+  async function getTvData() {
+    const tv = await getTvDay();
+    setTvData(tv)
+  }
+
+  useEffect(() => {
+    getTvData();
+  }, []);
 
 
   return (
@@ -68,6 +84,19 @@ function App(props) {
       <Route exact path="/"  render={ props =>
         <HomePage />
       }/>
+
+      <Route exact path="/tv" render={ props => 
+      getUser() ? 
+      <div>
+        {tvData.results.map((result, idx) => (
+           <TvPage result={result}/>
+        ))}
+      </div>
+        :
+        <Redirect to="/login" />
+      
+      }/>
+
       <Route exact path="/movie"  render={ props =>
 
       getUser() ? 

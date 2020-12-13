@@ -21,8 +21,14 @@
 
 .NavLinks li {
     margin-right: 20px;
+    font-size: 30px;
 }
 
 .NavBar-welcome {
     margin-right: 20px;
+    font-size: 30px;
+}
+
+.logo {
+    margin-top: 15px;
 }

@@ -6,12 +6,13 @@ function Header(props) {
     return(
         
         <header className="Header">
-            <Link to="/"><h1>Find It</h1></Link>
+            <Link className="logo" to="/"><h1>#Trending</h1></Link>
             <nav>
                 <ul className="NavLinks">
                     {
                         props.user ?
                     <>
+                    <li> <Link to="/tv">Tv</Link></li>
                     <li> <Link to="/movie">Movie</Link></li>
                      <span className='NavBar-welcome'>Welcome, {props.user.name}</span>
                     <li> <Link to="" onClick={props.handleLogout}>Logout</Link></li>
