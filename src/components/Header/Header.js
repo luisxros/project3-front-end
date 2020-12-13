@@ -12,7 +12,7 @@ function Header(props) {
                     {
                         props.user ?
                     <>
-                    <li> <Link to="/dashboard">Dashboard</Link></li>
+                    <li> <Link to="/movie">Movie</Link></li>
                      <span className='NavBar-welcome'>Welcome, {props.user.name}</span>
                     <li> <Link to="" onClick={props.handleLogout}>Logout</Link></li>
                     </>
