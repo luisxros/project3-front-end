@@ -75,6 +75,7 @@ function App(props) {
     getTvData();
   }, []);
 
+  
 
   return (
     <div className="App">
@@ -89,7 +90,7 @@ function App(props) {
       getUser() ? 
       <div>
         {tvData.results.map((result, idx) => (
-           <TvPage result={result}/>
+           <TvPage key ={idx}result={result}/>
         ))}
       </div>
         :
@@ -102,7 +103,7 @@ function App(props) {
       getUser() ? 
       <div>
         {movieData.results.map((result, idx) => (
-           <MoviePage result={result}/>
+           <MoviePage key={idx}result={result}/>
         ))}
       </div>
         :
