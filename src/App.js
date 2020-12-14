@@ -88,7 +88,7 @@ function App(props) {
 
       <Route exact path="/tv" render={ props => 
       getUser() ? 
-      <div>
+      <div className="Card">
         {tvData.results.map((result, idx) => (
            <TvPage key ={idx}result={result}/>
         ))}
@@ -101,7 +101,7 @@ function App(props) {
       <Route exact path="/movie"  render={ props =>
 
       getUser() ? 
-      <div>
+      <div className="Card">
         {movieData.results.map((result, idx) => (
            <MoviePage key={idx}result={result}/>
         ))}
