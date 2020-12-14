@@ -1,19 +1,24 @@
 import styles from './Pages.module.css';
+import MovieCard from '../components/MovieCard/MovieCard';
 
 function MoviePage(props) {
 
     
     return (
-        <main className="Page">
-           
-          
-        <div className={styles.Card}>
-        <img src={`https://image.tmdb.org/t/p/w200${props.result.poster_path}`} alt= "" />
-         <h5>{props.result.title}</h5>
-        </div>
-            
-          
-        </main>
+     <main className="Page">
+
+
+        <h1>Trending Movies for Today</h1>
+
+            <div className={styles.Card}>
+
+            {props.movieData.results.map((result, idx) => (
+                <MovieCard key={idx} result={result} />
+             ))}         
+
+            </div>
+
+    </main>
         
     )
 }

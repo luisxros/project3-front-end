@@ -1,23 +1,8 @@
 .Card {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: justify;
-    margin: 35px;
-    padding: 10px;
-    width: 200px;
-}
-
-.Card > h5 {
-    margin-top: 10px;
-    
-    
   }
-
-  .Card > img {
-      border-radius: 5px;
-      border: 5px solid dodgerblue;
-      
-  }
+  

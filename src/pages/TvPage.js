@@ -1,4 +1,5 @@
 import styles from './Pages.module.css';
+import TvCard from '../components/TvCard/TvCard';
 
 function TvPage(props) {
 
@@ -9,10 +10,15 @@ function TvPage(props) {
         <main className="Page">
             
 
-        <div className={styles.Card}>
-            <img src={`https://image.tmdb.org/t/p/w200${props.result.poster_path}`} alt= "" />
-            <h5>{props.result.name}</h5>
-        </div>
+             <h1>Trending Tv Shows for Today</h1>
+
+             <div className={styles.Card}>
+
+             {props.tvData.results.map((result, idx) => (
+                <TvCard key={idx} result={result} />
+                ))}         
+
+             </div>
             
           
         </main>

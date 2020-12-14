@@ -10,13 +10,8 @@
   
 }
 
-.Card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+
+
+.Page > h1 {
+  margin-top: 10px;
 }
-
-
-
