@@ -13,8 +13,14 @@
 .Page > form {
   width: 350px;
   height: 400px;
+  
 }
 
+.Cancel {
+  margin-left: 90%;
+  
+  
+}
 
 
 .Page > h1 {
