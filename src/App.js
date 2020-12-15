@@ -8,7 +8,8 @@ import TvPage from './pages/TvPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
-
+import { GlobalStyles } from './components/Global/Global';
+import { lightTheme, darkTheme } from './components/Themes/Themes';
 
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 
@@ -16,6 +17,7 @@ import { useState, useEffect } from 'react';
 
 import { getUser,logout } from './services/userService';
 import { getMovieDay, getTvDay } from './services/movie-api';
+import { ThemeProvider } from 'styled-components';
 
 
 
@@ -38,6 +40,11 @@ function App(props) {
     total_pages: 0,
     total_results: 0,
   })
+
+  const [theme, setTheme] = useState('light');
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
  
   
 
@@ -79,8 +86,14 @@ function App(props) {
   
 
   return (
+
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <>
+    <GlobalStyles />
+
     <div className="App">
       <Header user={userState.user} handleLogout={handleLogout} />
+      <button className="Switch" onClick={themeToggler}>Switch Theme</button>
 
       <Switch>
       <Route exact path="/"  render={ props =>
@@ -115,6 +128,8 @@ function App(props) {
 
       <Footer />
     </div>
+    </>
+    </ThemeProvider>
   );
 }
 
