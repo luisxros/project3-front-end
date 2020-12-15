@@ -18,7 +18,7 @@
 
 .Switch {
   background-color: dodgerblue;
-  width: 150px;
+  width: 100px;
   margin-top: 10px;
   border-radius: 5px;
   color: white;
@@ -28,5 +28,5 @@
 
 .App > button {
   outline: none;
-  
+  margin-left: 80%;
 }
