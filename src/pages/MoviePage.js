@@ -1,6 +1,7 @@
 import styles from './Pages.module.css';
 import MovieCard from '../components/MovieCard/MovieCard';
 
+
 function MoviePage(props) {
 
     
@@ -9,6 +10,8 @@ function MoviePage(props) {
 
 
         <h1>Trending Movies for Today</h1>
+
+      
 
             <div className={styles.Card}>
 

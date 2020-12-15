@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 
+
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 
 import { useState, useEffect } from 'react';
@@ -102,6 +103,8 @@ function App(props) {
         :
         <Redirect to="/login" />
       }/>
+
+
       <Route exact path="/login"  render={ props =>
         <LoginPage  handleSignupOrLogin={handleSignupOrLogin} />
       }/>
