@@ -1,6 +1,6 @@
 # #Trending
 
-a simple web application where you can post your thoughts, as well as comment on existing posts.
+A simple web application where the user can see the latest trending movies & tv shows
 
 ## Technologies Used
 - React.js
