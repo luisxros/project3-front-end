@@ -1,6 +1,6 @@
 # #Trending
 
-A simple web application where the user can see the latest trending movies & tv shows
+A web application where the user can see the latest trending movies & tv shows
 
 ## Technologies Used
 - React.js
